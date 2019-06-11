@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	func_expression()
+	return_func()
 }
