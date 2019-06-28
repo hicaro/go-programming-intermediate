@@ -42,6 +42,12 @@ func TestAverage(t *testing.T) {
 	}
 }
 
+func BenchmarkAverage(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Average(4, 3, 28, 92)
+	}
+}
+
 func ExampleSum() {
 	fmt.Println(Sum(1, 2))
 	// Output:
@@ -59,5 +65,11 @@ func TestSum(t *testing.T) {
 				"got", v,
 			)
 		}
+	}
+}
+
+func BenchmarkSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Sum(4, 3, 28, 92)
 	}
 }
