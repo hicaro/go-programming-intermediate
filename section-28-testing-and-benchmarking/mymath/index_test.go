@@ -1,6 +1,9 @@
 package mymath
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 type testpair struct {
 	values   []float64
@@ -19,6 +22,12 @@ var sumTests = []testpair{
 	{values: []float64{1, 4, 13}, expected: 18},
 }
 
+func ExampleAverage() {
+	fmt.Println(Average(1, 2))
+	// Output:
+	// 1.5
+}
+
 func TestAverage(t *testing.T) {
 	for _, pair := range avgTests {
 		v := Average(pair.values...)
@@ -31,6 +40,12 @@ func TestAverage(t *testing.T) {
 			)
 		}
 	}
+}
+
+func ExampleSum() {
+	fmt.Println(Sum(1, 2))
+	// Output:
+	// 3
 }
 
 func TestSum(t *testing.T) {
