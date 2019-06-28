@@ -33,4 +33,5 @@ func main() {
 
 	fmt.Println(mymath.Average(values...))
 	fmt.Println(mymath.Sum(values...))
+	fmt.Println(mymath.CenteredAverage(values...))
 }

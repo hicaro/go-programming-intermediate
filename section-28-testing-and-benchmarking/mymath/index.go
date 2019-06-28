@@ -1,6 +1,8 @@
 // Package mymath implement custom math functions
 package mymath
 
+import "sort"
+
 // Average function returns the average of the provided numbers
 func Average(numbers ...float64) float64 {
 	var avg float64
@@ -27,4 +29,19 @@ func Sum(numbers ...float64) float64 {
 	}
 
 	return sum
+}
+
+// CenteredAverage computes the average of a list of numbers
+// after removing the largest and smallest values.
+func CenteredAverage(xi ...float64) float64 {
+	sort.Float64s(xi)
+	xi = xi[1:(len(xi) - 1)]
+
+	var n float64
+	for _, v := range xi {
+		n += v
+	}
+
+	f := float64(n) / float64(len(xi))
+	return f
 }
